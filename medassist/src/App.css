@@ -1,0 +1,60 @@
+/* ============================================================
+   App shell — top-level layout
+   ============================================================ */
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+.app-shell__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0; /* prevent flex children from overflowing */
+}
+
+/* -- Mobile header (hidden on desktop) ---------------------- */
+
+.mobile-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-sidebar);
+  flex-shrink: 0;
+}
+
+.mobile-header__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.mobile-header__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: background var(--t-fast), color var(--t-fast);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.mobile-header__btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .mobile-header { display: flex; }
+}
